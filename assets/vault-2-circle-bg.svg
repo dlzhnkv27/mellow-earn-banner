@@ -1,0 +1,22 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2343_558)">
+<path d="M36 72C55.8822 72 72 55.8822 72 36C72 16.1177 55.8822 0 36 0C16.1177 0 0 16.1177 0 36C0 55.8822 16.1177 72 36 72Z" fill="url(#paint0_radial_2343_558)"/>
+<path opacity="0.6" d="M49.7168 32.7332L50.0912 33.3075C54.3137 39.785 53.3706 48.2684 47.8239 53.7034C44.5606 56.9006 40.2838 58.4996 36.0068 58.5C36.0068 58.5 36.0068 58.5 49.7168 32.7332Z" fill="white"/>
+<path opacity="0.2" d="M36.0056 40.5644L49.7154 32.7332C36.0056 58.5 36.0056 58.5 36.0056 58.5C36.0056 52.8882 36.0056 46.4577 36.0056 40.5644Z" fill="white"/>
+<path d="M22.2817 32.7332L21.9073 33.3075C17.6847 39.785 18.6277 48.2684 24.1746 53.7034C27.4378 56.9006 31.7146 58.4996 35.9915 58.5C35.9915 58.5 35.9915 58.5 22.2817 32.7332Z" fill="white"/>
+<path opacity="0.6" d="M35.9876 40.5644L22.2778 32.7332C35.9876 58.5 35.9876 58.5 35.9876 58.5C35.9876 52.8882 35.9876 46.4577 35.9876 40.5644Z" fill="white"/>
+<path opacity="0.2" d="M36.0098 23.0698V36.5764L47.8194 29.8274L36.0098 23.0698Z" fill="white"/>
+<path opacity="0.6" d="M36.0066 23.0698L24.1885 29.8273L36.0066 36.5764V23.0698Z" fill="white"/>
+<path d="M36.0066 11.7106L24.1885 29.8315L36.0066 23.055V11.7106Z" fill="white"/>
+<path opacity="0.6" d="M36.0098 23.0531L47.8283 29.8299L36.0098 11.7V23.0531Z" fill="white"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_2343_558" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36 36) rotate(90) scale(60.3)">
+<stop stop-color="#3A99FF"/>
+<stop offset="1" stop-color="#0050A5"/>
+</radialGradient>
+<clipPath id="clip0_2343_558">
+<rect width="72" height="72" fill="white"/>
+</clipPath>
+</defs>
+</svg>
