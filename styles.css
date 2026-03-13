@@ -39,10 +39,10 @@
   --vault-pill-icon-bg-image: url("./assets/vault-pill-arrow.svg");
   --vault-pill-icon-bg-size: 16px 16px;
   --vault-depth-duration: 400ms;
-  --vault-hover-duration: 300ms;
+  --vault-hover-duration: 400ms;
   --vault-hover-easing: cubic-bezier(0.22, 1, 0.36, 1);
   --vault-hover-lift: -3px;
-  --vault-hover-scale: 1.03;
+  --vault-hover-scale: 1.05;
   --vault-tilt-max: 0deg;
   --vault-shadow-hover: 0 18px 36px 0 rgba(0, 0, 0, 0.48);
   --vault-pill-glint-duration: 800ms;
@@ -342,10 +342,6 @@ body {
 
 .vault-hitbox.is-hovered .vault-pill-icon-container::after {
   animation: vault-pill-arrow-in var(--vault-hover-duration) ease-out 1 both;
-}
-
-.vault-hitbox.is-hovered .vault-pill-shape::after {
-  animation: vault-pill-glint-pass var(--vault-pill-glint-duration) ease-out 1 both;
 }
 
 @keyframes vault-pill-arrow-out {
