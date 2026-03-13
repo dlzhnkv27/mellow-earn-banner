@@ -1,6 +1,6 @@
 const vaultHitboxes = document.querySelectorAll(".vault-hitbox");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const DEFAULT_MAX_TILT_DEGREES = 5;
+const DEFAULT_MAX_TILT_DEGREES = 0;
 const DEFAULT_HOVER_SCALE = 1;
 const DEFAULT_HOVER_LIFT = 0;
 const HOVER_BOUNDS_SAFETY_PX = 4;
