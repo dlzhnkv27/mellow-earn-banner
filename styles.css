@@ -38,6 +38,7 @@
   --vault-pill-icon-bg-color: #ffffff;
   --vault-pill-icon-bg-image: url("./assets/vault-pill-arrow.svg");
   --vault-pill-icon-bg-size: 16px 16px;
+  --vault-depth-duration: 400ms;
   --vault-hover-duration: 300ms;
   --vault-hover-easing: cubic-bezier(0.22, 1, 0.36, 1);
   --vault-hover-lift: -3px;
@@ -212,8 +213,8 @@ body {
   transform-style: preserve-3d;
   will-change: transform, box-shadow;
   transition:
-    transform var(--vault-hover-duration) var(--vault-hover-easing),
-    box-shadow var(--vault-hover-duration) var(--vault-hover-easing);
+    transform var(--vault-depth-duration) var(--vault-hover-easing),
+    box-shadow var(--vault-depth-duration) var(--vault-hover-easing);
 }
 
 .vault-hitbox.is-hovered .vault {
