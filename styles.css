@@ -2,27 +2,36 @@
   --page-bg: #101115;
   --banner-width: 1130px;
   --banner-height: 200px;
-  --banner-padding-x: 40px;
+  --banner-padding-x: clamp(
+    24px,
+    calc(40px - (1130px - 100vw) * 0.15),
+    40px
+  );
   --banner-padding-y: 34px;
   --banner-container-radius: 20px;
-  --banner-container-bg-color: rgba(255, 255, 255, 0.02);
-  --banner-container-bg-image: url("./assets/banner-container-bg.svg");
+  --banner-container-bg-color: #000000;
+  --banner-container-bg-image: url("./assets/banner-container-bg.svg?v=20260319-1217");
   --banner-inner-shadow-color: rgba(255, 255, 255, 0.5);
   --earn-vault-radius: 48px;
-  --earn-vault-gap: 44px;
+  --earn-vault-gap: clamp(
+    20px,
+    calc(44px - (1130px - 100vw) * 0.2),
+    44px
+  );
   --earn-vault-padding: 6px;
   --earn-vault-bg: rgba(255, 255, 255, 0.05);
   --earn-vault-border: rgba(255, 255, 255, 0.1);
   --earn-vault-stats-divider-color: rgba(255, 255, 255, 0.12);
-  --earn-vault-stat-row-padding-left: 28px;
-  --earn-vault-stat-row-padding-right: 42px;
+  --earn-vault-stat-row-padding-left: clamp(16px, 2.2vw, 28px);
+  --earn-vault-stat-row-padding-right: clamp(20px, 3vw, 42px);
+  --earn-vault-stat-column-gap: clamp(8px, 1.4vw, 12px);
   --earn-vault-stat-label-color: #ffffff;
   --earn-vault-stat-value-color: #ffffff;
   --earn-vault-stat-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --earn-vault-stat-font-size: 15px;
   --earn-vault-stat-label-weight: 400;
   --earn-vault-stat-value-weight: 700;
-  --vault-width: 62%;
+  --vault-width: 300px;
   --vault-radius: 44px;
   --vault-padding: 24px;
   --vault-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.4);
@@ -33,6 +42,7 @@
   --vault-pill-label-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --vault-pill-label-font-size: 18px;
   --vault-pill-label-font-weight: 700;
+  --vault-pill-label-icon-gap-min: 8px;
   --vault-pill-icon-size: 32px;
   --vault-pill-icon-offset-right: 20px;
   --vault-pill-icon-bg-color: #ffffff;
@@ -61,6 +71,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  padding: clamp(12px, 2vw, 16px);
   display: grid;
   place-items: center;
   background: var(--page-bg);
@@ -68,7 +79,8 @@ body {
 }
 
 .banner-container {
-  width: var(--banner-width);
+  width: 100%;
+  max-width: var(--banner-width);
   height: var(--banner-height);
   padding: var(--banner-padding-y) var(--banner-padding-x);
   border-radius: var(--banner-container-radius);
@@ -149,7 +161,8 @@ body {
 }
 
 .earn-vault-stats {
-  flex: 1 1 auto;
+  flex: 0 0 calc(100% - var(--vault-width));
+  max-width: calc(100% - var(--vault-width));
   min-width: 0;
   margin-right: calc(-1 * var(--earn-vault-padding));
   display: flex;
@@ -164,7 +177,7 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  column-gap: 12px;
+  column-gap: var(--earn-vault-stat-column-gap);
 }
 
 .earn-vault-stat-row + .earn-vault-stat-row {
@@ -258,7 +271,7 @@ body {
 
 .vault-pill-shape {
   flex: 1 1 auto;
-  min-width: 0;
+  min-width: max-content;
   min-height: 0;
   height: 100%;
   position: relative;
@@ -295,20 +308,22 @@ body {
 }
 
 .vault-pill-label {
-  min-width: 0;
+  min-width: max-content;
+  flex: 0 0 auto;
   margin-right: auto;
   color: var(--vault-pill-label-color);
   font-family: var(--vault-pill-label-font-family);
   font-size: var(--vault-pill-label-font-size);
   font-weight: var(--vault-pill-label-font-weight);
   line-height: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: clip;
   white-space: nowrap;
 }
 
 .vault-pill-icon-container {
   flex: 0 0 var(--vault-pill-icon-size);
+  margin-left: var(--vault-pill-label-icon-gap-min);
   position: relative;
   overflow: hidden;
   width: var(--vault-pill-icon-size);
@@ -379,6 +394,142 @@ body {
     opacity: 0;
     left: calc(100% + var(--vault-pill-glint-size));
     transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner-container {
+    height: auto;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .earn-vault-container {
+    perspective: none;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .vault-hitbox {
+    width: 100%;
+    flex: 0 0 auto;
+    max-width: none;
+    height: auto;
+    min-width: 0;
+  }
+
+  .vault {
+    height: 120px;
+    min-width: 0;
+    transform-style: flat;
+    will-change: auto;
+  }
+
+  .earn-vault-stats {
+    width: 100%;
+    flex: 0 0 auto;
+    max-width: none;
+    margin-right: 0;
+    min-height: 88px;
+    border-radius: 0;
+    overflow: visible;
+    background-color: transparent;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .earn-vault-stat-row {
+    min-height: 88px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+  }
+
+  .earn-vault-stat-row + .earn-vault-stat-row {
+    border-top: 0;
+    border-left: 1px solid var(--earn-vault-stats-divider-color);
+  }
+
+  .earn-vault-stat-label,
+  .earn-vault-stat-value {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --vault-width: 100%;
+    --vault-mobile-height: calc(112px * 0.85);
+    --earn-vault-stats-mobile-height: calc(80px * 0.85);
+    --vault-padding: calc(24px * 0.85);
+    --vault-pill-icon-offset-right: calc(
+      (var(--vault-mobile-height) - (var(--vault-padding) * 2) - var(--vault-pill-icon-size)) / 2
+    );
+  }
+
+  body {
+    padding: 12px;
+  }
+
+  .banner-container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 56px;
+  }
+
+  .earn-vault-container {
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .vault-hitbox {
+    width: 100%;
+    flex: 0 0 auto;
+    max-width: none;
+    height: auto;
+    cursor: default;
+  }
+
+  .vault {
+    height: var(--vault-mobile-height);
+    transition: none;
+  }
+
+  .earn-vault-stats {
+    width: 100%;
+    flex: 0 0 auto;
+    max-width: none;
+    margin-right: 0;
+    min-height: var(--earn-vault-stats-mobile-height);
+  }
+
+  .earn-vault-stat-row {
+    min-height: var(--earn-vault-stats-mobile-height);
+    padding: calc(12px * 0.85) 16px;
+    row-gap: 8px;
+  }
+
+  .earn-vault-stat-label,
+  .earn-vault-stat-value {
+    font-size: 14px;
+  }
+
+  .vault-hitbox.is-hovered .vault {
+    transform: none;
+    box-shadow: var(--vault-shadow);
+  }
+
+  .vault-hitbox.is-hovered .vault-pill-icon-container::before,
+  .vault-hitbox.is-hovered .vault-pill-icon-container::after,
+  .vault-hitbox.is-hovered .vault-pill-shape::after {
+    animation: none;
   }
 }
 

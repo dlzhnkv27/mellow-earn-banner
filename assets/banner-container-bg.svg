@@ -1,21 +1,21 @@
 <svg width="1131" height="200" viewBox="0 0 1131 200" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0H1131V200H0V0Z" fill="black"/>
-<mask id="mask0_2842_456" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1131" height="200">
+<mask id="mask0_3137_29" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1131" height="200">
 <path d="M0 0H1131V200H0V0Z" fill="black"/>
 </mask>
-<g mask="url(#mask0_2842_456)">
-<g filter="url(#filter0_f_2842_456)">
-<ellipse cx="411.703" cy="86.3789" rx="411.703" ry="86.3789" transform="matrix(0.784561 -0.620051 0.76452 0.644601 168.91 161.554)" fill="#71D5F6"/>
+<g mask="url(#mask0_3137_29)">
+<g filter="url(#filter0_f_3137_29)">
+<ellipse cx="411.703" cy="86.3789" rx="411.703" ry="86.3789" transform="matrix(0.784561 -0.620051 0.76452 0.644601 168.91 161.555)" fill="#71D5F6"/>
 <ellipse cx="384.099" cy="112.378" rx="384.099" ry="112.378" transform="matrix(0.77467 -0.632366 0.77467 0.632366 -29 121.782)" fill="#FF97BB"/>
 <ellipse cx="375.713" cy="73.8007" rx="375.713" ry="73.8007" transform="matrix(0.77467 -0.632366 0.77467 0.632366 219.766 130.919)" fill="#A578FC"/>
 <ellipse cx="375.713" cy="97.0276" rx="375.713" ry="97.0276" transform="matrix(0.941732 -0.336363 0.518113 0.855312 657.125 318.332)" fill="#53D1FF"/>
 </g>
 </g>
 <defs>
-<filter id="filter0_f_2842_456" x="-154.498" y="-503.184" width="1773.14" height="1129.33" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_3137_29" x="-154.498" y="-503.184" width="1773.14" height="1129.33" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_2842_456"/>
+<feGaussianBlur stdDeviation="100" result="effect1_foregroundBlur_3137_29"/>
 </filter>
 </defs>
 </svg>

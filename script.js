@@ -1,5 +1,6 @@
 const vaultHitboxes = document.querySelectorAll(".vault-hitbox");
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const desktopInteractionQuery = window.matchMedia("(min-width: 1025px)");
 const DEFAULT_MAX_TILT_DEGREES = 0;
 const DEFAULT_HOVER_SCALE = 1;
 const DEFAULT_HOVER_LIFT = 0;
@@ -111,7 +112,11 @@ vaultHitboxes.forEach((vaultHitbox) => {
   }
 
   function shouldIgnorePointer(event) {
-    return reducedMotionQuery.matches || event.pointerType === "touch";
+    return (
+      reducedMotionQuery.matches ||
+      !desktopInteractionQuery.matches ||
+      event.pointerType === "touch"
+    );
   }
 
   function clearInteractiveState() {
@@ -195,12 +200,31 @@ vaultHitboxes.forEach((vaultHitbox) => {
   vaultHitbox.addEventListener("pointerleave", handlePointerLeave);
   window.addEventListener("pointermove", handlePointerMove);
   window.addEventListener("blur", clearInteractiveState);
+  window.addEventListener("resize", clearInteractiveState);
 
   vaultHitbox.addEventListener("pointercancel", clearInteractiveState);
 });
 
 reducedMotionQuery.addEventListener("change", (event) => {
   if (!event.matches) {
+    return;
+  }
+
+  vaultHitboxes.forEach((vaultHitbox) => {
+    const vault = vaultHitbox.querySelector(".vault");
+
+    vaultHitbox.classList.remove("is-hovered");
+
+    if (!vault) {
+      return;
+    }
+
+    resetVaultTilt(vault);
+  });
+});
+
+desktopInteractionQuery.addEventListener("change", (event) => {
+  if (event.matches) {
     return;
   }
 
